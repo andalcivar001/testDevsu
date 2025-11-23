@@ -1,0 +1,70 @@
+<div class="container">
+  <h2>{{tituloForm}}</h2>
+  <div class="divider"></div>
+
+  <form #emailForm="ngForm" class="form-container">
+    <!-- Grupo de formulario para cada campo -->
+
+    <div class="form-group">
+      <label for="numeroIdentificacion">N°. Identificacion:</label>
+      <input
+        type="text"
+        [(ngModel)]="clienteData.numeroIdentificacion"
+        name="numeroIdentificacion"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="id">Nombre:</label>
+      <input type="text" [(ngModel)]="clienteData.nombre" name="nombre" />
+    </div>
+
+    <div class="form-group">
+      <label for="genero">Género:</label>
+      <select id="genero" [(ngModel)]="clienteData.genero" name="genero">
+        <option value="" disabled selected>Seleccione un género</option>
+        <option value="M">Masculino</option>
+        <option value="F">Femenino</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="fechaNacimiento">Fecha Nacimiento:</label>
+      <input
+        type="date"
+        name="fechaNacimiento"
+        [(ngModel)]="clienteData.fechaNacimiento"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="direccion">Direccion:</label>
+      <input type="text" [(ngModel)]="clienteData.direccion" name="direccion" />
+    </div>
+
+    <div class="form-group">
+      <label for="direccion">Teléfono:</label>
+      <input type="text" [(ngModel)]="clienteData.telefono" name="telefono" />
+    </div>
+
+    <div class="form-group">
+      <label for="direccion">Password:</label>
+      <input type="text" [(ngModel)]="clienteData.password" name="password" />
+    </div>
+
+    <div class="form-group">
+      <label for="estado">Estado:</label>
+      <select id="estado" [(ngModel)]="clienteData.estado" name="estado">
+        <option value="" disabled selected>Seleccione un estado</option>
+        <option value="true">Activo</option>
+        <option value="false">Inactivo</option>
+      </select>
+    </div>
+    <div class="button-group">
+      <button class="button-reiniciar" (click)="onCancelar()">Cancelar</button>
+      <button type="submit" class="button-guardar" (click)="onGuardarCliente()">
+        Guardar
+      </button>
+    </div>
+  </form>
+</div>

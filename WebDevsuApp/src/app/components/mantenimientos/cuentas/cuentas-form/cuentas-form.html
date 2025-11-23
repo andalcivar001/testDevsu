@@ -1,0 +1,66 @@
+<div class="container">
+  <h2>{{tituloForm}}</h2>
+  <div class="divider"></div>
+
+  <form #emailForm="ngForm" class="form-container">
+    <!-- Grupo de formulario para cada campo -->
+
+    <div class="form-group">
+      <label for="cliente">Cliente:</label>
+
+      <select id="cliente" [(ngModel)]="cuentaData.idCliente" name="cliente">
+        <option value="" disabled>Seleccione un cliente</option>
+        @for (item of clientes; track $index) {
+        <option [value]="item.idCliente">{{ item.nombre }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="numeroCuenta">N°. Cuenta:</label>
+      <input
+        type="text"
+        [(ngModel)]="cuentaData.numeroCuenta"
+        name="numeroCuenta"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="tipoCuenta">Tipo:</label>
+      <select
+        id="tipoCuenta"
+        [(ngModel)]="cuentaData.tipoCuenta"
+        name="tipoCuenta"
+      >
+        <option value="" disabled selected>Seleccione un tipo</option>
+        <option value="A">Ahorro</option>
+        <option value="C">Corriente</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="saldoInicial">Saldo Inicial:</label>
+      <input
+        type="number"
+        [(ngModel)]="cuentaData.saldoInicial"
+        name="saldoInicial"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="estado">Estado:</label>
+      <select id="estado" [(ngModel)]="cuentaData.estado" name="estado">
+        <option value="" disabled selected>Seleccione un estado</option>
+        <option value="true">Activo</option>
+        <option value="false">Inactivo</option>
+      </select>
+    </div>
+
+    <div class="button-group">
+      <button class="button-reiniciar" (click)="onCancelar()">Cancelar</button>
+      <button type="submit" class="button-guardar" (click)="onGuardarCliente()">
+        Guardar
+      </button>
+    </div>
+  </form>
+</div>

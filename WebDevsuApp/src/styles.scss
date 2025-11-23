@@ -1,0 +1,388 @@
+/* ================================
+   VARIABLES
+================================ */
+$color-button-primary: #ffc907;
+$color-button-primary-hover: #e0a800;
+$color-button-refresh: #e9e5d8;
+$color-button-refresh-hover: #8a8881;
+
+/* ================================
+   GLOBAL
+================================ */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+}
+
+/* ================================
+   BOTONES
+================================ */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-guardar {
+  background-color: $color-button-primary;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+
+  &:hover {
+    background-color: $color-button-primary-hover;
+  }
+}
+
+.button-reiniciar {
+  background-color: $color-button-refresh;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+
+  &:hover {
+    background-color: $color-button-refresh-hover;
+  }
+}
+
+/* ================================
+   ICONO ELLIPSIS
+================================ */
+.fas.fa-ellipsis-v {
+  cursor: pointer;
+}
+.fas.fa-ellipsis-v:active {
+  transform: scale(1.2);
+}
+
+/* ================================
+   TABLA
+================================ */
+.table {
+  width: 100%;
+  background-color: #fff;
+  font-size: 14px;
+  border-collapse: collapse;
+}
+
+.table thead {
+  background-color: #f4f4f4;
+}
+
+.table thead th {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .table {
+    font-size: 12px;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .table thead th {
+    padding: 8px;
+  }
+
+  .table tbody td {
+    padding: 6px;
+  }
+
+  .table table {
+    width: 100%;
+    border-collapse: separate;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .table {
+    font-size: 13px;
+  }
+
+  .table thead th {
+    padding: 9px;
+  }
+
+  .table tbody td {
+    padding: 8px;
+  }
+}
+
+@media (min-width: 769px) {
+  .table {
+    font-size: 14px;
+  }
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ================================
+   DROPDOWN
+================================ */
+.dropdown {
+  position: relative;
+  display: flex;
+  background: #ffffff;
+  border: 1px solid #dcdcdc;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s ease;
+}
+
+.dropdown .dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown .dropdown-item {
+  padding: 12px;
+  text-decoration: none;
+  color: #333;
+  display: block;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f4f4f4;
+  }
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* ================================
+   HEADER
+================================ */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 10px;
+  }
+}
+
+/* ================================
+   SEARCH INPUT
+================================ */
+.search-input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+}
+
+@media (max-width: 480px) {
+  .search-input {
+    font-size: 12px;
+    padding: 6px;
+  }
+}
+
+/* ================================
+   BUTTON AGREGAR
+================================ */
+.add-button {
+  padding: 10px 20px;
+  background-color: #ffc107;
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+@media (max-width: 480px) {
+  .add-button {
+    font-size: 12px;
+    padding: 8px 16px;
+    margin-left: 0;
+  }
+}
+
+/* ================================
+   MENSAJES Y DIVIDER
+================================ */
+.mensaje-error {
+  color: crimson;
+  font-size: 11px;
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  margin: 20px 0;
+}
+
+/* ================================
+   FORMULARIO
+================================ */
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-container .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-container label {
+  font-size: 13px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container input[type="date"],
+.form-container input[type="number"],
+.form-container select,
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .form-container input,
+  .form-container select,
+  .form-container textarea {
+    padding: 8px;
+  }
+}
+
+/* FIX del error: propiedades arriba del media query */
+.form-container .button-group {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .form-container .button-group {
+    grid-column: span 1;
+  }
+}
+
+/* ================================
+   RESPONSIVE EXTRA
+================================ */
+@media (max-width: 768px) {
+  .form-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}
+
+/* ================================
+   CONTAINER
+================================ */
+.container {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .container {
+    margin: 10px;
+    padding: 10px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    margin: 15px;
+    padding: 15px;
+  }
+}
+
+/* ================================
+   OTROS
+================================ */
+.logo-image {
+  height: 20px;
+}
+
+select {
+  width: 80px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}

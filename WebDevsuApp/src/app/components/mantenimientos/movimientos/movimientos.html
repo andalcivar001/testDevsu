@@ -1,0 +1,77 @@
+<div class="container">
+  <h2>Movimientos</h2>
+  <div class="divider"></div>
+
+  <div class="header">
+    <input
+      type="text"
+      class="search-input"
+      placeholder="Buscar..."
+      [(ngModel)]="busqueda"
+      (change)="onChange($event)"
+    />
+    <button class="add-button" (click)="crearMovimiento()">Agregar</button>
+  </div>
+  <div class="table-wrapper">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id Movimiento</th>
+          <th>Tipo Movimiento</th>
+          <th>N°. Cuenta</th>
+          <th>Cliente</th>
+          <th>Fecha</th>
+          <th>Valor</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (row of movimientos; track row) {
+        <tr>
+          <td>{{ row.idMovimiento }}</td>
+          <td>{{ row.tipoMovimiento == 'C' ? 'Crédito' : 'Débito' }}</td>
+          <td>{{ row.numeroCuenta }}</td>
+          <td>{{ row.nombreCliente }}</td>
+          <td>{{ row.fecha| date : "yyyy-MM-dd" : "UTC" }}</td>
+          <td>{{ row.tipoMovimiento =='C' ? row.valor : row.valor! * -1 }}</td>
+          <td>
+            <div class="dropdown">
+              <button class="dropdown-toggle" aria-expanded="false">
+                Acciones
+              </button>
+              <div class="dropdown-menu">
+                <a
+                  class="dropdown-item"
+                  (click)="editarMovimiento(row.idMovimiento!)"
+                  >Editar</a
+                >
+                <a class="dropdown-item" (click)="abrirModal(row.idMovimiento!)"
+                  >Eliminar</a
+                >
+              </div>
+            </div>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div style="display: flex; justify-content: space-between; margin-top: 10px">
+    <p style="font-size: 12px">{{ movimientos.length }} Registros</p>
+    <select [(ngModel)]="pageSize" (change)="onChangePageSize()">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="20">20</option>
+    </select>
+  </div>
+</div>
+
+<!-- el modal -->
+<app-dialog-confirm
+  [show]="showModal"
+  (onConfirm)="confirmar()"
+  (onCancel)="cancelar()"
+>
+</app-dialog-confirm>

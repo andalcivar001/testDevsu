@@ -1,0 +1,20 @@
+# .gitignore en la raíz del repositorio
+
+# Para Angular (frontend)
+WebDevsuApp/node_modules/
+WebDevsuApp/dist/
+WebDevsuApp/npm-debug.log
+
+# Para .NET Core (backend)
+WebDevsuApi/bin/
+WebDevsuApi/obj/
+WebDevsuApi/.vs/
+WebDevsuApi/.vscode/
+WebDevsuApi/.idea/
+WebDevsuApi/*.user
+WebDevsuApi/*.userosscache
+WebDevsuApi/*.suo
+WebDevsuApi/*.userprefs
+
+# Otros archivos generales que suelen ser ignorados
+*.log

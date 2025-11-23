@@ -1,0 +1,17 @@
+# Ignorar artefactos de compilación y archivos de entorno locales
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.log
+node_modules/
+*.db
+Dockerfile*
+**/bin/
+**/obj/
+.env
+.idea/
+.vscode/
+*.md
+*.local

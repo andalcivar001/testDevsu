@@ -1,0 +1,122 @@
+/* ===== RESET MODERNO ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-white: #ffffff;
+  --text-dark: #1a1a1a;
+  --primary: #3b82f6;
+  --border-color: #e5e7eb;
+  --border-strong: #d1d5db;
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== NAVBAR SUPERIOR ===== */
+.navbar {
+  width: 100%;
+  height: 60px;
+  background: var(--bg-white);
+  border-bottom: 1px solid var(--border-strong); /* ← línea gris más visible */
+  color: var(--text-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  z-index: 50;
+  box-shadow: var(--shadow);
+
+  .logo {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .menu-btn {
+    display: none;
+    font-size: 26px;
+    border: none;
+    cursor: pointer;
+    color: var(--text-dark);
+  }
+}
+
+/* ===== LAYOUT CONTAINER ===== */
+.main-container {
+  display: flex;
+  margin-top: 60px;
+}
+
+/* ===== SIDEBAR MODERNO ===== */
+.sidebar {
+  width: 220px;
+  height: calc(100vh - 60px);
+  background: var(--bg-white);
+  border-right: 1px solid var(--border-color);
+  position: fixed;
+  left: 0;
+  top: 60px;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+
+  a {
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 14px 20px;
+    font-size: 15px;
+    transition: 0.2s;
+    border-left: 4px solid transparent;
+    border-bottom: 1px solid var(--border-color); /* ← separador horizontal */
+
+    &:hover {
+      background: #f5f5f5;
+    }
+
+    &.active {
+      background: #eef4ff;
+      border-left-color: var(--primary);
+      font-weight: 600;
+    }
+
+    &:last-child {
+      border-bottom: none; /* ← Sin borde en la última opción */
+    }
+  }
+}
+
+/* ===== CONTENT ===== */
+.content {
+  margin-left: 220px;
+  padding: 25px 30px;
+  width: calc(100% - 220px);
+  background: #fafafa;
+  min-height: calc(100vh - 60px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .navbar .menu-btn {
+    display: block;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+
+    &.open {
+      transform: translateX(0);
+    }
+  }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+  }
+}

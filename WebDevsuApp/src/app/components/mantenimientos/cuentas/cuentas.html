@@ -1,0 +1,73 @@
+<div class="container">
+  <h2>Cuentas</h2>
+  <div class="divider"></div>
+
+  <div class="header">
+    <input
+      type="text"
+      class="search-input"
+      placeholder="Buscar..."
+      [(ngModel)]="busqueda"
+      (change)="onChange($event)"
+    />
+    <button class="add-button" (click)="crearCuenta()">Agregar</button>
+  </div>
+  <div class="table-wrapper">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id Cuenta</th>
+          <th>N°. Cuenta</th>
+          <th>Cliente</th>
+          <th>Tipo</th>
+          <th>Estado</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (row of cuentas; track row) {
+        <tr>
+          <td>{{ row.idCuenta }}</td>
+          <td>{{ row.numeroCuenta }}</td>
+          <td>{{ row.nombreCliente }}</td>
+          <td>{{ row.tipoCuenta == 'A' ? 'Ahorros' : 'Corriente' }}</td>
+          <td>{{ row.estado ? "Activo" : "Inactivo" }}</td>
+          <td>
+            <div class="dropdown">
+              <button class="dropdown-toggle" aria-expanded="false">
+                Acciones
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" (click)="editarCuenta(row.idCuenta!)"
+                  >Editar</a
+                >
+                <a class="dropdown-item" (click)="abrirModal(row.idCuenta!)"
+                  >Eliminar</a
+                >
+              </div>
+            </div>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div style="display: flex; justify-content: space-between; margin-top: 10px">
+    <p style="font-size: 12px">{{ cuentas.length }} Registros</p>
+    <select [(ngModel)]="pageSize" (change)="onChangePageSize()">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="20">20</option>
+    </select>
+  </div>
+</div>
+
+<!-- el modal -->
+<app-dialog-confirm
+  [show]="showModal"
+  (onConfirm)="confirmar()"
+  (onCancel)="cancelar()"
+>
+</app-dialog-confirm>
