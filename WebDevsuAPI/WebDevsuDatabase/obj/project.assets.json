@@ -4262,11 +4262,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\devsu\\Backend\\backend\\WebDevsuAPI\\WebDevsuDatabase\\WebDevsuDatabase.csproj",
+      "projectUniqueName": "C:\\devsu\\WebDevsuAPI\\WebDevsuDatabase\\WebDevsuDatabase.csproj",
       "projectName": "WebDevsuDatabase",
-      "projectPath": "C:\\devsu\\Backend\\backend\\WebDevsuAPI\\WebDevsuDatabase\\WebDevsuDatabase.csproj",
+      "projectPath": "C:\\devsu\\WebDevsuAPI\\WebDevsuDatabase\\WebDevsuDatabase.csproj",
       "packagesPath": "C:\\Users\\alciv\\.nuget\\packages\\",
-      "outputPath": "C:\\devsu\\Backend\\backend\\WebDevsuAPI\\WebDevsuDatabase\\obj\\",
+      "outputPath": "C:\\devsu\\WebDevsuAPI\\WebDevsuDatabase\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

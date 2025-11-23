@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "16O2ecjQJA1VJtmVJlqPDOLlhU9LVaVUg9bGDZFwvNnJuBcoZAx5QT7VW208qHBMY9dlV+la5b2hVpeuQX5djQ==",
+  "dgSpecHash": "n0nNGzgdts6Zk6enrtopR64140TXg5hJ9lDXEW2W1/pMyftVaIp3Ecfn/GNQfTwzd+EuRHo77m5ptYY2umnHLQ==",
   "success": true,
-  "projectFilePath": "C:\\devsu\\Backend\\backend\\WebDevsuAPI\\WebDevsuDatabase\\WebDevsuDatabase.csproj",
+  "projectFilePath": "C:\\devsu\\WebDevsuAPI\\WebDevsuDatabase\\WebDevsuDatabase.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alciv\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\alciv\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
