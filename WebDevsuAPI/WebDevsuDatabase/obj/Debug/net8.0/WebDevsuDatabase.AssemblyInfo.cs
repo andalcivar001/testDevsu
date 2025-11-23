@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebDevsuDatabase")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66c3f366221ec2c5506379b33cd0cb2510e48328")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6160f78ab97969a14051e9f73efde071ff68eb2b")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebDevsuDatabase")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebDevsuDatabase")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
